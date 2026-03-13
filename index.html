@@ -28,18 +28,35 @@ transition:all .8s ease;
 opacity:1;
 transform:translateY(0);
 }
-  .hero-bg{
-background: linear-gradient(
+ .hero-bg{
+
+background:
+radial-gradient(circle at 20% 30%, #2563eb33, transparent 40%),
+radial-gradient(circle at 80% 70%, #06b6d433, transparent 40%),
+linear-gradient(
 120deg,
-#0b0b0b,
-#111827,
+#020617,
+#0f172a,
 #1e293b,
 #0f172a,
 #020617
 );
-filter: blur(0px) brightness(1.1);
-background-size:300% 300%;
-animation:gradientFlow 18s linear infinite;
+
+background-size:200% 200%;
+animation:gradientFlow 20s linear infinite;
+
+}
+
+@keyframes gradientFlow{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:100% 50%;
+}
+
 }
 
 @keyframes gradientFlow{

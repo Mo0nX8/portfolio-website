@@ -212,24 +212,31 @@ Feel free to reach out for business websites or ecommerce projects.
 
 <script>
 
-const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver((entries) => {
 
 entries.forEach(entry => {
 
-if(entry.isIntersecting){
+if (entry.isIntersecting) {
 
-entry.target.classList.add("show")
+entry.target.classList.add("show");
+
+} else {
+
+entry.target.classList.remove("show");
 
 }
 
-})
+});
 
-})
+}, {
+threshold: 0.2
+});
 
-document.querySelectorAll(".fade").forEach(el => observer.observe(el))
+document.querySelectorAll(".fade").forEach((el) => {
+observer.observe(el);
+});
 
 </script>
-
 
 </body>
 </html>

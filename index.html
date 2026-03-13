@@ -60,26 +60,17 @@ background-position:100% 50%;
 
 }
 
-@keyframes gradientFlow{
-
-0%{
-background-position:0% 50%;
-}
-
-100%{
-background-position:100% 50%;
-}
-
-}
-
 @keyframes gradientMove{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
- .project-card:hover{
+.project:hover{
 box-shadow:0 0 25px rgba(59,130,246,0.4);
+}
+.project{
+transition:all .25s ease;
 }
 </style>
 
@@ -154,7 +145,18 @@ Order on Fiverr
 
 <div class="project bg-zinc-900 rounded-xl overflow-hidden hover:scale-105 transition fade cursor-pointer"
 data-title="DXMarket Webshop"
-data-description="Custom ecommerce webshop with product catalog and cart functionality."
+data-description="DXMarket is a custom ecommerce webshop built from scratch.
+
+Features:
+• Product catalog
+• Shopping cart system
+• PC builder configuration
+• Responsive design
+
+Technologies:
+HTML
+CSS
+JavaScript."
 data-image="images/webshop.png">
 
 <img src="images/webshop.png" class="w-full h-48 object-cover">
@@ -179,7 +181,17 @@ Custom ecommerce webshop with product catalog and cart functionality.
 
 <div class="project bg-zinc-900 rounded-xl overflow-hidden hover:scale-105 transition fade cursor-pointer"
 data-title="PC Builder"
-data-description="Custom PC configuration system with dynamic component selection and pricing."
+data-description="Custom PC configuration system.
+
+Features:
+• Component selection
+• Dynamic price calculation
+• Compatibility validation
+
+Technologies:
+HTML
+CSS
+JavaScript"
 data-image="images/pcbuilder.png">
 
 <img src="images/pcbuilder.png" class="w-full h-48 object-cover">
@@ -199,7 +211,17 @@ Custom PC configuration system with dynamic pricing.
 
 <div class="project bg-zinc-900 rounded-xl overflow-hidden hover:scale-105 transition fade cursor-pointer"
 data-title="Accounting Assistant"
-data-description="WPF desktop software generating PDF quotations for bookkeeping offices."
+data-description="Desktop software developed for bookkeeping offices.
+
+Features:
+• PDF quotation generation
+• Client management
+• Fast document creation
+
+Technologies:
+C#
+.NET
+WPF"
 data-image="images/wpf.png">
 
 <img src="images/wpf.png" class="w-full h-48 object-cover">
@@ -222,21 +244,6 @@ WPF desktop software generating PDF quotations.
 
 </section>
 
- <section class="py-20 px-6" id="about">
-
-<div class="max-w-3xl mx-auto text-center fade">
-
-<h2 class="text-3xl font-semibold mb-6">About Me</h2>
-
-<p class="text-gray-400">
-I'm a developer focused on building modern websites,
-ecommerce platforms and desktop tools.
-I enjoy creating clean, fast and functional software solutions.
-</p>
-
-</div>
-
-</section>
 
 <section id="skills" class="py-24 px-6 bg-black">
 
@@ -280,27 +287,43 @@ Feel free to reach out for business websites or ecommerce projects.
 
 </section>
 
+  <section class="py-20 px-6" id="about">
+
+<div class="max-w-3xl mx-auto text-center fade">
+
+<h2 class="text-3xl font-semibold mb-6">About Me</h2>
+
+<p class="text-gray-400">
+I'm a developer focused on building modern websites,
+ecommerce platforms and desktop tools.
+I enjoy creating clean, fast and functional software solutions.
+</p>
+
+</div>
+
+</section>
+
 
 <footer class="text-center py-8 text-gray-500">
 © 2025 Daniel Kovacs
 </footer>
 
 
-<!-- MODAL -->
 
-<div id="projectModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
 
-<div class="bg-zinc-900 max-w-2xl w-full rounded-xl overflow-hidden relative">
+<div id="projectModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-6">
 
-<button id="closeModal" class="absolute top-4 right-4 text-white text-xl">✕</button>
+<div class="bg-zinc-900 max-w-2xl w-full rounded-xl overflow-hidden relative animate-fadeIn">
+
+<button id="closeModal" class="absolute top-4 right-4 text-white text-xl hover:text-red-400">✕</button>
 
 <img id="modalImage" class="w-full h-64 object-cover">
 
-<div class="p-6">
+<div class="p-6 space-y-4">
 
-<h3 id="modalTitle" class="text-xl font-semibold mb-2"></h3>
+<h3 id="modalTitle" class="text-2xl font-semibold"></h3>
 
-<p id="modalDescription" class="text-gray-400"></p>
+<p id="modalDescription" class="text-gray-400 whitespace-pre-line"></p>
 
 </div>
 
@@ -311,41 +334,33 @@ Feel free to reach out for business websites or ecommerce projects.
 
 <script>
 
-const observer=new IntersectionObserver((entries)=>{
-
+const observer = new IntersectionObserver((entries)=>{
 entries.forEach(entry=>{
-
 if(entry.isIntersecting){
-
 entry.target.classList.add("show")
-
 }else{
-
 entry.target.classList.remove("show")
-
 }
-
 })
-
 },{threshold:0.2})
 
 document.querySelectorAll(".fade").forEach(el=>observer.observe(el))
 
 
-const modal=document.getElementById("projectModal")
-const modalTitle=document.getElementById("modalTitle")
-const modalDescription=document.getElementById("modalDescription")
-const modalImage=document.getElementById("modalImage")
-const closeModal=document.getElementById("closeModal")
+const modal = document.getElementById("projectModal")
+const modalTitle = document.getElementById("modalTitle")
+const modalDescription = document.getElementById("modalDescription")
+const modalImage = document.getElementById("modalImage")
+const closeModal = document.getElementById("closeModal")
 
 
 document.querySelectorAll(".project").forEach(project=>{
 
 project.addEventListener("click",()=>{
 
-modalTitle.textContent=project.dataset.title
-modalDescription.textContent=project.dataset.description
-modalImage.src=project.dataset.image
+modalTitle.textContent = project.dataset.title
+modalDescription.textContent = project.dataset.description
+modalImage.src = project.dataset.image
 
 modal.classList.remove("hidden")
 modal.classList.add("flex")
@@ -356,31 +371,21 @@ modal.classList.add("flex")
 
 
 closeModal.addEventListener("click",()=>{
-
 modal.classList.add("hidden")
-
 })
 
 
 modal.addEventListener("click",(e)=>{
-
-if(e.target===modal){
-
+if(e.target === modal){
 modal.classList.add("hidden")
-
 }
-
 })
 
 
 document.addEventListener("keydown",(e)=>{
-
-if(e.key==="Escape"){
-
+if(e.key === "Escape"){
 modal.classList.add("hidden")
-
 }
-
 })
 
 </script>

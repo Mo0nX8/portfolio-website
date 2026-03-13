@@ -6,101 +6,229 @@
 
 <title>Daniel Kovacs | Developer</title>
 
-<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+font-family: 'Inter', sans-serif;
+background:#0b0b0b;
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:all 0.8s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+</style>
 
 </head>
 
-<body>
+<body class="text-white">
 
-<nav>
-<div class="nav-container">
-<h2>DK</h2>
-<ul>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<!-- NAV -->
+
+<nav class="fixed w-full bg-black/40 backdrop-blur z-50">
+
+<div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+
+<h1 class="text-xl font-semibold">DK</h1>
+
+<div class="space-x-6 text-sm">
+
+<a href="#projects" class="hover:text-blue-400">Projects</a>
+
+<a href="#skills" class="hover:text-blue-400">Skills</a>
+
+<a href="#contact" class="hover:text-blue-400">Contact</a>
+
 </div>
+
+</div>
+
 </nav>
 
-<section class="hero">
 
-<h1>Daniel Kovacs</h1>
+<!-- HERO -->
 
-<p>
-Web Developer building custom websites, ecommerce solutions and software tools.
+<section class="min-h-screen flex items-center justify-center text-center px-6">
+
+<div class="fade">
+
+<h1 class="text-5xl md:text-6xl font-bold mb-6">
+Daniel Kovacs
+</h1>
+
+<p class="text-gray-400 max-w-xl mx-auto">
+Web developer focused on custom websites, ecommerce solutions and software tools.
 </p>
 
-<a href="#projects" class="btn">View Projects</a>
-
-</section>
-
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div class="projects-grid">
-
-<div class="card">
-<img src="images/mainsite.png">
-<h3>DXMarket Webshop</h3>
-<p>Custom ecommerce webshop with product pages and shopping cart.</p>
-</div>
-
-<div class="card">
-<img src="images/pcbuilder.png">
-<h3>PC Builder</h3>
-<p>Custom computer configuration tool with dynamic price calculation.</p>
-</div>
-
-<div class="card">
-<img src="images/wpf.png">
-<h3>Accounting Assistant</h3>
-<p>WPF desktop software generating PDF quotations for bookkeeping offices.</p>
-</div>
+<a href="#projects"
+class="inline-block mt-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition">
+View Projects
+</a>
 
 </div>
 
 </section>
 
 
-<section id="skills">
+<!-- PROJECTS -->
 
-<h2>Skills</h2>
+<section id="projects" class="py-24 px-6">
 
-<div class="skills">
+<div class="max-w-6xl mx-auto">
 
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>C#</span>
-<span>.NET</span>
-<span>WPF</span>
+<h2 class="text-3xl font-semibold mb-12 text-center fade">Projects</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="bg-zinc-900 rounded-xl overflow-hidden hover:scale-105 transition fade">
+
+<img src="images/webshop.png" class="w-full h-48 object-cover">
+
+<div class="p-6">
+
+<h3 class="text-lg font-semibold mb-2">DXMarket Webshop</h3>
+
+<p class="text-gray-400 text-sm">
+Custom ecommerce webshop with product catalog and cart functionality.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="bg-zinc-900 rounded-xl overflow-hidden hover:scale-105 transition fade">
+
+<img src="images/pcbuilder.png" class="w-full h-48 object-cover">
+
+<div class="p-6">
+
+<h3 class="text-lg font-semibold mb-2">PC Builder</h3>
+
+<p class="text-gray-400 text-sm">
+Custom PC configuration system with dynamic pricing.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="bg-zinc-900 rounded-xl overflow-hidden hover:scale-105 transition fade">
+
+<img src="images/wpf.png" class="w-full h-48 object-cover">
+
+<div class="p-6">
+
+<h3 class="text-lg font-semibold mb-2">Accounting Assistant</h3>
+
+<p class="text-gray-400 text-sm">
+WPF desktop software generating PDF quotations for bookkeeping offices.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 
-<section id="contact">
 
-<h2>Contact</h2>
+<!-- SKILLS -->
 
-<p>Email: your@email.com</p>
-<p>GitHub: github.com/username</p>
-<p>Fiverr: fiverr.com/username</p>
+<section id="skills" class="py-24 px-6 bg-black">
+
+<div class="max-w-5xl mx-auto text-center">
+
+<h2 class="text-3xl font-semibold mb-12 fade">Skills</h2>
+
+<div class="flex flex-wrap justify-center gap-4 fade">
+
+<span class="bg-zinc-800 px-4 py-2 rounded-lg">HTML</span>
+
+<span class="bg-zinc-800 px-4 py-2 rounded-lg">CSS</span>
+
+<span class="bg-zinc-800 px-4 py-2 rounded-lg">JavaScript</span>
+
+<span class="bg-zinc-800 px-4 py-2 rounded-lg">C#</span>
+
+<span class="bg-zinc-800 px-4 py-2 rounded-lg">.NET</span>
+
+<span class="bg-zinc-800 px-4 py-2 rounded-lg">WPF</span>
+
+</div>
+
+</div>
 
 </section>
 
 
-<footer>
 
-<p>© 2025 Daniel Kovacs</p>
+<!-- CONTACT -->
+
+<section id="contact" class="py-24 px-6">
+
+<div class="max-w-xl mx-auto text-center fade">
+
+<h2 class="text-3xl font-semibold mb-6">Contact</h2>
+
+<p class="text-gray-400 mb-4">
+Feel free to reach out for business websites or ecommerce projects.
+</p>
+
+<p>Email: kovacs.daniel0403@gmail.com</p>
+
+<p class="mt-2">GitHub: github.com/mo0nx8</p>
+
+<p class="mt-2">Fiverr: fiverr.com/mo0nx8</p>
+
+</div>
+
+</section>
+
+
+
+<footer class="text-center py-8 text-gray-500">
+
+© 2025 Daniel Kovacs
 
 </footer>
+
+
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show")
+
+}
+
+})
+
+})
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el))
+
+</script>
 
 
 </body>

@@ -29,9 +29,29 @@ opacity:1;
 transform:translateY(0);
 }
   .hero-bg{
-background: linear-gradient(-45deg,#0b0b0b,#0f172a,#1e293b,#0b0b0b);
-background-size:400% 400%;
-animation:gradientMove 12s ease infinite;
+background: linear-gradient(
+120deg,
+#0b0b0b,
+#111827,
+#1e293b,
+#0f172a,
+#020617
+);
+
+background-size:300% 300%;
+animation:gradientFlow 18s linear infinite;
+}
+
+@keyframes gradientFlow{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:100% 50%;
+}
+
 }
 
 @keyframes gradientMove{

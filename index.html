@@ -409,7 +409,7 @@ document.querySelectorAll(".project").forEach(project=>{
 project.addEventListener("click",()=>{
 
 modalTitle.textContent = project.dataset.title
-modalDescription.textContent = project.dataset.description
+modalDescription.innerHTML = project.dataset.description
 modalImage.src = project.dataset.image
 
 modal.classList.remove("hidden")
